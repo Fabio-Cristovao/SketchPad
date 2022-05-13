@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&display=swap');
+
+body {
+    font-family:'Cabin Sketch';
+}
+
+h1 {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.container{
+    display: grid;
+    margin: 10px auto;
+    width: 30rem;
+    height: 30rem;
+    border: 1px solid black;
+}
+
+.cell{
+    border: 0.5px solid black;
+}
+
+.controls{
+    display: grid;
+    grid-template-columns: 90px 3fr;
+    margin: auto;
+    width: 30rem;
+    height: 50px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.label{
+    margin: 0px auto 14px auto;
+    height: 15px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.slidebar{
+    display: grid;
+    margin: 0 auto 15px auto;
+    width: 90%;
+    height: 10px;
+    background-color: grey;
+    opacity: 0.6;
+    outline: none;
+    border-radius: 5px;
+}
+
+.slidebar::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+    outline: none;
+  }
+
+#clear-button {
+    font-family: "Cabin Sketch";
+    font-size: 0.8rem;
+    font-weight: bold;
+    height: 30px;
+    width: 100%;
+    padding: 1.5em auto;    
+    margin: 1em auto;
+    background-color: lightgrey;
+    border: none;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+
+#clear-button:hover{
+    background-color: #6cb3f2;
+  }
+#clear-button:active{
+    box-shadow: inset 0px 0px 10px rgb(86, 4, 121);
+}

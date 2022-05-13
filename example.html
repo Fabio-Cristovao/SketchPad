@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+
+   <head lang="en">
+      <title>Etch-a-Sketch</title>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="example.css">
+   </head>
+
+   <body>
+      <h1>Etch-a-Sketch</h1>
+      <div class="controls">
+         <button id="clear-button">Clear</button>
+         <div>
+            <p class="label">Pixel Size</p>
+            <input type="range" min="2" max="30" value="15" class="slidebar">
+         </div>
+      </div>
+      <div class="container">
+      </div>
+   </body>
+   <script>
+      const COLORS = ["#AB05F2", "#5A13F2", "#2745F2", "#138AF2"];
+      let container = document.getElementsByClassName("container")[0];
+      let clearButton = document.getElementById("clear-button");
+      let slideBar = document.querySelector("input.slidebar");
+      let n = slideBar.value;
+
+      function choose(arr) {
+         return arr[Math.floor(Math.random() * arr.length)]
+      }
+
+      function fillCell(event) {
+         event.target.style.backgroundColor = choose(COLORS);
+      }
+
+      function clearGrid() {
+         while (container.firstChild) {
+            container.removeChild(container.lastChild);
+         }
+      }
+
+      function createCell() {
+         let cell = document.createElement("div");
+         cell.classList.add("cell");
+         cell.addEventListener("mouseover", fillCell);
+         return cell
+      }
+
+      function populateGrid() {
+         for (let i = 0; i < n * n; i++) {
+            container.appendChild(createCell());
+         }
+      }
+
+      function createGrid() {
+         clearGrid(container);
+         container.style.gridTemplateColumns = `repeat(${n},1fr)`;
+         container.style.gridTemplateRows = `repeat(${n},1fr)`;
+         populateGrid();
+      }
+
+      clearButton.addEventListener("click", createGrid);
+      slideBar.addEventListener("change", (e) => {
+         n = event.target.value;
+         createGrid();
+      })
+      createGrid(); 
+   </script>
+
+</html>

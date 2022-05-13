@@ -10,6 +10,11 @@
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="/index.css">
       <title>SketchPad</title>
+      <style>
+         .grid-item :hover {
+            background-color: red;
+         }
+      </style>
    </head>
 
    <body>
@@ -19,10 +24,14 @@
          </div>
          <div class="main-content-container">
             <div class="left-container">
+               <div class="input-container">
+                  <label for="pixel-range" id="pixel-range-label">Pixel-Range: 16</label>
+                  <input name="pixel-range" type="range" value="16" min="1" max="64" id="pixel-range" step="1">
+               </div>
                <div class="button-container">
-                  <button>fdgdsfg</button>
-                  <button>dfgdfsg</button>
-                  <button>dfgdsfg</button>
+                  <button>Choose color</button>
+                  <button>Rainbow</button>
+                  <button>Clear</button>
                </div>
             </div>
             <div class="right-container">
